@@ -692,10 +692,8 @@ img {
 
 .qualification__icon {
   /* 如果圖標太大或太小，可以在這裡調整大小 */
-  font-size: 1rem;
+  font-size: 1.5rem;
   /* 或任何合適的大小 */
-  color: white;
-  /* 你可以選擇一個好看的顏色 */
 }
 
 .services__content:hover {
