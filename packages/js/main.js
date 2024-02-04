@@ -49,36 +49,39 @@ skillsHeader.forEach((el) => {
 });
 
 /*==================== QUALIFICATION TABS ====================*/
-const tabs = document.querySelectorAll("[data-target]"),
-  tabContents = document.querySelectorAll("[data-content]");
+document.addEventListener('DOMContentLoaded', (event) => {
+  // 获取所有标签和内容
+  const tabs = document.querySelectorAll("[data-target]");
+  const tabContents = document.querySelectorAll("[data-content]");
 
-tabs.forEach(tab => {
-  tab.addEventListener("click", () => {
-    const target = document.querySelector(tab.dataset.target);
+  // 默认显示 "Education" 部分
+  document.querySelector("#education").classList.add('default-show');
 
-    // 先隐藏所有tabContents
-    tabContents.forEach(tabContent => {
-      tabContent.classList.remove("qualification__active");
-      setTimeout(() => {
-        tabContent.style.display = "none"; // 这将在淡出效果之后隐藏内容
-      }, 100); // 这个时间与CSS中的过渡时间相匹配
-    });
-
-    // 显示目标tabContent
-    setTimeout(() => {
-      target.style.display = "block"; // 先显示内容
-      requestAnimationFrame(() => {
-        target.classList.add("qualification__active"); // 然后添加激活类来开始淡入
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      // 隐藏所有内容
+      tabContents.forEach(content => {
+        content.classList.remove('default-show');
+        content.style.display = 'none';
+        content.style.opacity = 0;
       });
-    }, 100);
 
-    // 更新激活的标签
-    tabs.forEach(t => {
-      t.classList.remove("qualification__active");
+      // 显示点击的标签对应的内容
+      const target = document.querySelector(tab.dataset.target);
+      target.style.display = 'block';
+      setTimeout(() => {
+        target.style.opacity = 1;
+      }, 100); // 给display设置为block后小延迟，以便开始透明度过渡
+
+      // 更新标签的激活状态
+      tabs.forEach(t => {
+        t.classList.remove('qualification__active');
+      });
+      tab.classList.add('qualification__active');
     });
-    tab.classList.add("qualification__active");
   });
 });
+
 
 /*==================== SERVICES MODAL ====================*/
 const modalViews = document.querySelectorAll(".services__modal"),

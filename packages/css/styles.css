@@ -673,11 +673,16 @@ img {
 }
 
 .qualification__content[data-content] {
-  display: block;
-  /* 初始时不显示内容 */
+  display: none;
   opacity: 0;
-  transition: opacity 0.3s ease, display 0s 0.3s;
-  /* 过渡效果和延迟display的消失 */
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  /* 其他必要的样式 */
+}
+
+/* 为默认显示的 "Education" 标签内容添加一个额外的类，如 .default-show */
+.default-show {
+  display: block;
+  opacity: 1;
 }
 
 .qualification__active[data-content] {
