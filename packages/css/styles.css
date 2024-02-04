@@ -673,11 +673,19 @@ img {
 }
 
 .qualification__content[data-content] {
-  display: none;
+  display: block;
+  /* 初始时不显示内容 */
+  opacity: 0;
+  transition: opacity 0.3s ease, display 0s 0.3s;
+  /* 过渡效果和延迟display的消失 */
 }
 
 .qualification__active[data-content] {
   display: block;
+  /* 活动标签显示内容 */
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  /* 过渡效果 */
 }
 
 .qualification__button.qualification__active {

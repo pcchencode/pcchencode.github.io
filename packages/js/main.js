@@ -52,17 +52,29 @@ skillsHeader.forEach((el) => {
 const tabs = document.querySelectorAll("[data-target]"),
   tabContents = document.querySelectorAll("[data-content]");
 
-tabs.forEach((tab) => {
+tabs.forEach(tab => {
   tab.addEventListener("click", () => {
     const target = document.querySelector(tab.dataset.target);
 
-    tabContents.forEach((tabContent) => {
+    // 先隐藏所有tabContents
+    tabContents.forEach(tabContent => {
       tabContent.classList.remove("qualification__active");
+      setTimeout(() => {
+        tabContent.style.display = "none"; // 这将在淡出效果之后隐藏内容
+      }, 100); // 这个时间与CSS中的过渡时间相匹配
     });
-    target.classList.add("qualification__active");
 
-    tabs.forEach((tab) => {
-      tab.classList.remove("qualification__active");
+    // 显示目标tabContent
+    setTimeout(() => {
+      target.style.display = "block"; // 先显示内容
+      requestAnimationFrame(() => {
+        target.classList.add("qualification__active"); // 然后添加激活类来开始淡入
+      });
+    }, 100);
+
+    // 更新激活的标签
+    tabs.forEach(t => {
+      t.classList.remove("qualification__active");
     });
     tab.classList.add("qualification__active");
   });
