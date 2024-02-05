@@ -376,7 +376,7 @@ img {
 }
 
 .button__icon {
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   margin-left: var(--mb-0-5);
   transition: 0.3s;
 }
@@ -1359,6 +1359,19 @@ img {
     .about__buttons {
       justify-content: initial;
     }
+
+    .about__button-wrapper {
+      text-align: center;
+      margin-top: 20px;
+      /* Adjust the margin-top as needed */
+    }
+
+    .about__buttons {
+      display: inline-block;
+      /* This makes the div only as wide as its content */
+    }
+
+
 
     .qualification__tabs {
       justify-content: center;
