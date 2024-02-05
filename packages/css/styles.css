@@ -587,6 +587,42 @@ img {
   width: 80%;
 }
 
+.skills__docker {
+  width: 94%;
+}
+
+.skills__k8s {
+  width: 84%;
+}
+
+.skills__aws {
+  width: 84%;
+}
+
+.skills__gcp {
+  width: 95%;
+}
+
+.skills__azure {
+  width: 92%;
+}
+
+.skills__jenkeins {
+  width: 90%;
+}
+
+.skills__powerbi {
+  width: 96%;
+}
+
+.skills__grafana {
+  width: 92%;
+}
+
+.skills__kibana {
+  width: 78%;
+}
+
 .skills__google {
   width: 70%;
 }
