@@ -536,15 +536,55 @@ img {
 }
 
 .skills__python {
-  width: 60%;
+  width: 98%;
+}
+
+.skills__C {
+  width: 80%;
+}
+
+.skills__R {
+  width: 85%;
+}
+
+.skills__go {
+  width: 50%;
+}
+
+.skills__js {
+  width: 80%;
 }
 
 .skills__tab {
   width: 70%;
 }
 
+.skills__postgres {
+  width: 98%;
+}
+
+.skills__mongo {
+  width: 95%;
+}
+
+.skills__elk {
+  width: 93%;
+}
+
 .skills__sql {
-  width: 50%;
+  width: 98%;
+}
+
+.skills__hdfs {
+  width: 90%;
+}
+
+.skills__hive {
+  width: 90%;
+}
+
+.skills__hbase {
+  width: 80%;
 }
 
 .skills__google {
@@ -1419,4 +1459,28 @@ img {
   .contact__inputs {
     grid-template-columns: repeat(2, 1fr);
   }
+}
+
+@keyframes bounce {
+
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-10px);
+  }
+
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+.scroll-down-indicator {
+  animation: bounce 2s infinite;
+  /* Adjust '2s' to control the speed */
 }

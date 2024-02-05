@@ -34,15 +34,20 @@ const skillsContent = document.getElementsByClassName("skills__content"),
   skillsHeader = document.querySelectorAll(".skills__header");
 
 function toggleSkills() {
+  // This represents the <div> of the header that was clicked
   let itemClass = this.parentNode.className;
 
-  for (i = 0; i < skillsContent.length; i++) {
-    skillsContent[i].className = "skills__content skills__close";
-  }
+  // Toggle the class between 'skills__close' and 'skills__open'
   if (itemClass === "skills__content skills__close") {
     this.parentNode.className = "skills__content skills__open";
+  } else if (itemClass === "skills__content skills__open") {
+    this.parentNode.className = "skills__content skills__close";
   }
 }
+
+skillsHeader.forEach((el) => {
+  el.addEventListener("click", toggleSkills);
+});
 
 skillsHeader.forEach((el) => {
   el.addEventListener("click", toggleSkills);
